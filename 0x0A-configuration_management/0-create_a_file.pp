@@ -1,6 +1,10 @@
-# This Puppet manifest installs puppet-lint
+# This Puppet manifest creates a file in /tmp
 
-package { 'puppet-lint':
-  ensure   => '2.1.1',
-  provider => 'gem',
+file { 'temp':
+  ensure  => file,
+  path    => '/tmp/school',
+  mode    => '0744',
+  owner   => 'www-data',
+  group   => 'www-data',
+  content => 'I love Puppet'
 }
